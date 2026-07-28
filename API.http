@@ -1,0 +1,57 @@
+@API_HostAddress = http://localhost:5106
+
+### Listar todas as moedas
+GET {{API_HostAddress}}/api/moedas/
+Accept: application/json
+
+### Obter moeda por ID
+GET {{API_HostAddress}}/api/moedas/1
+Accept: application/json
+
+### Cotação ao vivo de Bitcoin (USD + BRL)
+GET {{API_HostAddress}}/api/moedas/live/btc
+Accept: application/json
+
+### Cotação ao vivo de Ethereum
+GET {{API_HostAddress}}/api/moedas/live/eth
+Accept: application/json
+
+### Cotação ao vivo de Solana
+GET {{API_HostAddress}}/api/moedas/live/sol
+Accept: application/json
+
+### Cotação ao vivo + salvar no banco
+GET {{API_HostAddress}}/api/moedas/live/btc/save
+Accept: application/json
+
+### Criar nova moeda
+POST {{API_HostAddress}}/api/moedas/
+Content-Type: application/json
+
+{
+  "nome": "Bitcoin",
+  "simbolo": "BTC",
+  "preco": 45000.00
+}
+
+### Atualizar moeda
+PUT {{API_HostAddress}}/api/moedas/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "nome": "Bitcoin",
+  "simbolo": "BTC",
+  "preco": 46000.00
+}
+
+### Deletar moeda
+DELETE {{API_HostAddress}}/api/moedas/1
+
+### Health check
+GET {{API_HostAddress}}/health
+Accept: application/json
+
+### Scalar API Documentation
+GET {{API_HostAddress}}/scalar/v1
+Accept: text/html
